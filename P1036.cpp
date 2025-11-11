@@ -1,3 +1,4 @@
+//æœ¬é¢˜ç”¨æ—¶34ms
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -9,8 +10,8 @@ using namespace std;
 int n, m;
 int a[21];
 int ans = 0;
-map<int, int> mp;//Ó³ÉäÕÒ´ÎÊı ÅÅ³ıÍ¬Ò»Êı×ÖµÄ²»Í¬½â
-int ar[10000000];//´æ´¢Öµ
+map<int, int> mp;//æ˜ å°„æ‰¾æ¬¡æ•° æ’é™¤åŒä¸€æ•°å­—çš„ä¸åŒè§£
+int ar[10000000];//å­˜å‚¨å€¼
 int ss(int h)
 {
 	if (h == 1) return 0;
@@ -29,14 +30,14 @@ void dg(int bu, int temp, int ind)
 	if (bu == m)
 	{
 		mp[temp]++;
-		if (mp[temp] == 1)//Èç¹ûÃ»ÓĞ³öÏÖ¹ı
+		if (mp[temp] == 1)//å¦‚æœæ²¡æœ‰å‡ºç°è¿‡
 		{
-			ar[hx++] = temp;//´æÈëÖµ
+			ar[hx++] = temp;//å­˜å…¥å€¼
 		}
 	}
 	else
 	{
-		for (int i = ind;i < n;i++)//µİ¹é
+		for (int i = ind;i < n;i++)//é€’å½’
 		{
 			dg(bu + 1, temp + a[i], i + 1);
 		}
@@ -61,4 +62,5 @@ int main()
 		}
 	}
 	cout << ans;
+
 }
